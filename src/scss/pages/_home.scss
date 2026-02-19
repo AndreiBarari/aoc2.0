@@ -1,3 +1,6 @@
+@use '../base' as *;
+@use '../components/buttons' as *;
+
 .main-home {
   @include flex(column, center, center);
 
@@ -42,12 +45,12 @@
       gap: 3rem;
 
       a {
-        @extend %button-rose;
+        @include button-rose;
       }
     }
 
     &__image {
-      background-image: url("../../assets/Homepage/hero-image.png");
+      background-image: url('../../assets/Homepage/hero-image.png');
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
@@ -111,13 +114,13 @@
 
         color: $white;
         gap: 3rem;
-        background-image: url("../../assets/Homepage/discount.png");
+        background-image: url('../../assets/Homepage/discount.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
 
         a {
-          @extend %button-rose;
+          @include button-rose;
         }
       }
     }
@@ -189,7 +192,7 @@
         }
 
         &::before {
-          content: "";
+          content: '';
           position: absolute;
           top: 0;
           left: 0;

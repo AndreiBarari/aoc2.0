@@ -1,3 +1,6 @@
+@use '../base' as *;
+@use '../components/buttons' as *;
+
 .main-about {
   @include flex(column, center, center);
 
@@ -29,7 +32,7 @@
       }
 
       a {
-        @extend %button-rose;
+        @include button-rose;
       }
     }
 

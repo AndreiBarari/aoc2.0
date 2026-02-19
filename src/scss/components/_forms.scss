@@ -1,3 +1,6 @@
+@use '../base' as *;
+@use './buttons' as *;
+
 %form-base {
   @include flex(column, flex-start, flex-start);
 
@@ -106,7 +109,7 @@
     .add-to-cart-btn {
       width: 100%;
 
-      @extend %button-rose;
+      @include button-rose;
     }
   }
 }
@@ -174,8 +177,8 @@
       }
     }
 
-    button[type="submit"] {
-      @extend %button-rose;
+    button[type='submit'] {
+      @include button-rose;
     }
   }
 }
@@ -199,8 +202,8 @@
     }
   }
 
-  button[type="submit"] {
-    @extend %button-rose;
+  button[type='submit'] {
+    @include button-rose;
   }
 }
 
@@ -322,10 +325,10 @@
         }
       }
 
-      button[type="submit"] {
+      button[type='submit'] {
         width: 100%;
 
-        @extend %button-rose;
+        @include button-rose;
       }
     }
 

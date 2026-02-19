@@ -1,3 +1,6 @@
+@use '../base' as *;
+@use '../components/buttons' as *;
+
 .footer {
   @include flex(column, center, center);
 
@@ -11,7 +14,7 @@
     width: 100%;
     padding: 4rem 2rem;
     gap: 3.2rem;
-    background-image: url("../../assets/Footer/separator.png");
+    background-image: url('../../assets/Footer/separator.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -67,8 +70,8 @@
     column-gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
-      "links links contact"
-      "shipping shipping contact";
+      'links links contact'
+      'shipping shipping contact';
     font-size: $font-size-xl;
     font-weight: $font-weight-medium;
 
@@ -167,8 +170,8 @@
     &__grid {
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
-        "links contact"
-        "shipping shipping";
+        'links contact'
+        'shipping shipping';
 
       .footer-links {
         flex-direction: column;
@@ -192,9 +195,9 @@
     &__grid {
       grid-template-columns: 1fr;
       grid-template-areas:
-        "links"
-        "shipping"
-        "contact";
+        'links'
+        'shipping'
+        'contact';
     }
   }
 }

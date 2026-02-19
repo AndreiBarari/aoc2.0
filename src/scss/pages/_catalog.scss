@@ -1,3 +1,6 @@
+@use '../base' as *;
+@use '../components/buttons' as *;
+
 .main-catalog {
   @include flex(column, center, center);
 
@@ -93,7 +96,7 @@
         }
 
         .sale {
-          input[type="checkbox"] {
+          input[type='checkbox'] {
             opacity: 0;
             position: absolute;
             width: 0;
@@ -109,11 +112,13 @@
             border-radius: 50%;
             background-color: $white;
             border: 2px solid $neutral-200;
-            transition: background-color 0.2s ease, border-color 0.2s ease;
+            transition:
+              background-color 0.2s ease,
+              border-color 0.2s ease;
           }
 
           label::before {
-            content: "";
+            content: '';
             position: absolute;
             display: block;
             width: 12px;
@@ -127,19 +132,19 @@
             transition: all 0.2s ease;
           }
 
-          input[type="checkbox"]:checked + label {
+          input[type='checkbox']:checked + label {
             background-color: $neutral-200;
             border-color: $neutral-200;
           }
 
-          input[type="checkbox"]:checked + label::before {
+          input[type='checkbox']:checked + label::before {
             opacity: 1;
             transform: translate(-50%, -50%) scale(1);
           }
         }
 
         button {
-          @extend %button-rose;
+          @include button-rose;
 
           height: 6rem;
           width: 22rem;
@@ -166,7 +171,7 @@
             font-size: $font-size-lg;
             color: $neutral-500;
             cursor: pointer;
-            background-image: url("../../assets/Header/down-chevron.png");
+            background-image: url('../../assets/Header/down-chevron.png');
             background-repeat: no-repeat;
             background-position: right 1rem center;
             background-size: 1rem;
@@ -256,7 +261,7 @@
         }
 
         button {
-          @extend %button-rose-outline;
+          @include button-rose-outline;
 
           border-radius: 10px;
         }

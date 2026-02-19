@@ -1,3 +1,6 @@
+@use '../base' as *;
+@use './buttons' as *;
+
 .product-card {
   position: relative;
 
@@ -37,7 +40,7 @@
   }
 
   button {
-    @extend %button-rose;
+    @include button-rose;
   }
 }
 

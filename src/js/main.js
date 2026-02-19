@@ -1,248 +1,246 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const header = document.querySelector('.header')
-  const utility = document.querySelector('.utility')
-  const utilityMedia = document.querySelector('.utility__media')
-  const navigation = document.querySelector('.navigation')
-  const dropdownLinks = document.querySelectorAll('.dropdown__link')
-  const userBtn = document.getElementById('user')
-  const cartBtn = document.getElementById('cart')
+  const header = document.querySelector('.header');
+  const utility = document.querySelector('.utility');
+  const utilityMedia = document.querySelector('.utility__media');
+  const navigation = document.querySelector('.navigation');
+  const dropdownLinks = document.querySelectorAll('.dropdown__link');
+  const userBtn = document.getElementById('user');
+  const cartBtn = document.getElementById('cart');
 
   window.showFlashMessage = function (message, type = 'success') {
     if (document.querySelector('.flash-message')) {
-      return
+      return;
     }
-    const flashMessage = document.createElement('div')
-    flashMessage.className = `flash-message flash-message--${type}`
-    flashMessage.textContent = message
-    document.body.appendChild(flashMessage)
+    const flashMessage = document.createElement('div');
+    flashMessage.className = `flash-message flash-message--${type}`;
+    flashMessage.textContent = message;
+    document.body.appendChild(flashMessage);
     setTimeout(() => {
-      flashMessage.classList.add('is-visible')
-    }, 10)
+      flashMessage.classList.add('is-visible');
+    }, 10);
     setTimeout(() => {
-      flashMessage.classList.remove('is-visible')
+      flashMessage.classList.remove('is-visible');
       flashMessage.addEventListener('transitionend', () => {
         if (flashMessage.parentNode) {
-          flashMessage.parentNode.removeChild(flashMessage)
+          flashMessage.parentNode.removeChild(flashMessage);
         }
-      })
-    }, 2000)
-  }
+      });
+    }, 2000);
+  };
 
   window.getCart = function () {
-    const cartData = localStorage.getItem('cart')
-    return cartData ? JSON.parse(cartData) : []
-  }
+    const cartData = localStorage.getItem('cart');
+    return cartData ? JSON.parse(cartData) : [];
+  };
 
   window.saveCart = function (cart) {
-    localStorage.setItem('cart', JSON.stringify(cart))
-  }
+    localStorage.setItem('cart', JSON.stringify(cart));
+  };
 
   window.updateCartCounter = function () {
-    const cart = window.getCart()
-    let counter = cartBtn.querySelector('.cart-quantity')
+    const cart = window.getCart();
+    let counter = cartBtn.querySelector('.cart-quantity');
     if (cart.length > 0) {
       if (!counter) {
-        counter = document.createElement('span')
-        counter.classList.add('cart-quantity')
-        cartBtn.appendChild(counter)
+        counter = document.createElement('span');
+        counter.classList.add('cart-quantity');
+        cartBtn.appendChild(counter);
       }
-      counter.textContent = cart.length
+      counter.textContent = cart.length;
     } else {
-      counter?.remove()
+      counter?.remove();
     }
-  }
+  };
 
-  async function fetchAllProducts () {
-    const url = '../assets/data.json'
+  async function fetchAllProducts() {
+    const url = '../assets/data.json';
     try {
-      const response = await fetch(url)
+      const response = await fetch(url);
       if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`)
+        throw new Error(`Response status: ${response.status}`);
       }
-      const data = await response.json()
-      return data.data ? data.data : data
+      const data = await response.json();
+      return data.data ? data.data : data;
     } catch (error) {
-      console.error('Error fetching data:', error)
-      return []
+      console.error('Error fetching data:', error);
+      return [];
     }
   }
-  window.getData = fetchAllProducts
+  window.getData = fetchAllProducts;
 
-  const burgerBtn = document.createElement('button')
-  burgerBtn.className = 'header__burger-btn'
-  burgerBtn.setAttribute('aria-label', 'Toggle navigation')
-  burgerBtn.setAttribute('aria-expanded', 'false')
-  burgerBtn.innerHTML = '<span></span><span></span><span></span>'
+  const burgerBtn = document.createElement('button');
+  burgerBtn.className = 'header__burger-btn';
+  burgerBtn.setAttribute('aria-label', 'Toggle navigation');
+  burgerBtn.setAttribute('aria-expanded', 'false');
+  burgerBtn.innerHTML = '<span></span><span></span><span></span>';
 
-  const mobileMedia = utilityMedia.cloneNode(true)
-  mobileMedia.classList.add('utility__media--mobile')
-  utilityMedia.classList.add('utility__media--desktop')
+  const mobileMedia = utilityMedia.cloneNode(true);
+  mobileMedia.classList.add('utility__media--mobile');
+  utilityMedia.classList.add('utility__media--desktop');
 
   if (header) {
     const handleScroll = () => {
-      header.classList.toggle('scrolled', window.scrollY > 0)
-    }
-    window.addEventListener('scroll', handleScroll)
-    handleScroll()
+      header.classList.toggle('scrolled', window.scrollY > 0);
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
   }
 
   if (header && utility && navigation) {
-    header.insertBefore(burgerBtn, navigation)
+    header.insertBefore(burgerBtn, navigation);
   }
   if (navigation) {
-    navigation.appendChild(mobileMedia)
+    navigation.appendChild(mobileMedia);
   }
 
   if (burgerBtn && navigation) {
     burgerBtn.addEventListener('click', function () {
-      this.classList.toggle('is-active')
-      navigation.classList.toggle('is-open')
-      document.body.classList.toggle('no-scroll')
-      const isExpanded = this.getAttribute('aria-expanded') === 'true'
-      this.setAttribute('aria-expanded', !isExpanded)
-    })
+      this.classList.toggle('is-active');
+      navigation.classList.toggle('is-open');
+      document.body.classList.toggle('no-scroll');
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isExpanded);
+    });
   }
 
   dropdownLinks.forEach((link) => {
     link.addEventListener('click', function (event) {
       if (window.innerWidth < 768) {
-        event.preventDefault()
-        const dropdownParent = this.closest('.dropdown')
-        dropdownParent?.classList.toggle('is-open')
+        event.preventDefault();
+        const dropdownParent = this.closest('.dropdown');
+        dropdownParent?.classList.toggle('is-open');
       }
-    })
-  })
+    });
+  });
 
   document.body.addEventListener('click', function (event) {
-    const clickedButton = event.target.closest('.add-to-cart')
+    const clickedButton = event.target.closest('.add-to-cart');
     if (clickedButton) {
-      event.preventDefault()
+      event.preventDefault();
       if (event.target.closest('.cart-form')) {
-        return
+        return;
       }
 
-      const productCard = clickedButton.closest('.product-card[data-id]')
-      const productId = productCard?.dataset.id
+      const productCard = clickedButton.closest('.product-card[data-id]');
+      const productId = productCard?.dataset.id;
 
       if (productId) {
-        const cart = window.getCart()
-        const isAlreadyInCart = cart.some((item) => item.id === productId)
+        const cart = window.getCart();
+        const isAlreadyInCart = cart.some((item) => item.id === productId);
         if (isAlreadyInCart) {
-          window.showFlashMessage('Product is already in cart', 'danger')
+          window.showFlashMessage('Product is already in cart', 'danger');
         } else {
-          cart.push({ id: productId, quantity: 1 })
-          window.saveCart(cart)
-          window.updateCartCounter()
-          window.showFlashMessage('Product added to cart', 'success')
+          cart.push({ id: productId, quantity: 1 });
+          window.saveCart(cart);
+          window.updateCartCounter();
+          window.showFlashMessage('Product added to cart', 'success');
         }
       }
     }
-  })
+  });
 
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-  function showValidationError (input, message) {
-    input.classList.add('is-invalid')
-    const errorSpan = input.nextElementSibling
+  function showValidationError(input, message) {
+    input.classList.add('is-invalid');
+    const errorSpan = input.nextElementSibling;
 
     if (errorSpan?.classList.contains('form-error-message')) {
-      errorSpan.textContent = message
+      errorSpan.textContent = message;
     }
   }
 
-  function clearValidationError (input) {
-    input.classList.remove('is-invalid')
-    const errorSpan = input.nextElementSibling
+  function clearValidationError(input) {
+    input.classList.remove('is-invalid');
+    const errorSpan = input.nextElementSibling;
 
     if (errorSpan?.classList.contains('form-error-message')) {
-      errorSpan.textContent = ''
+      errorSpan.textContent = '';
     }
   }
 
-  function validateForm (form) {
-    let isValid = true
-    const inputs = form.querySelectorAll('input[required], textarea[required]')
+  function validateForm(form) {
+    let isValid = true;
+    const inputs = form.querySelectorAll('input[required], textarea[required]');
 
     inputs.forEach((input) => {
-      clearValidationError(input)
+      clearValidationError(input);
       if (input.value.trim() === '') {
-        isValid = false
-        showValidationError(input, 'This field is required.')
+        isValid = false;
+        showValidationError(input, 'This field is required.');
       } else if (input.type === 'email' && !emailRegex.test(input.value)) {
-        isValid = false
-        showValidationError(input, 'Please enter a valid email address.')
+        isValid = false;
+        showValidationError(input, 'Please enter a valid email address.');
       }
-    })
+    });
 
     if (form.id === 'sign-up-form') {
-      const password = form.querySelector('input[name="password"]')
-      const repeatPassword = form.querySelector(
-        'input[name="repeat-password"]'
-      )
+      const password = form.querySelector('input[name="password"]');
+      const repeatPassword = form.querySelector('input[name="repeat-password"]');
 
       if (password?.value !== repeatPassword?.value) {
-        isValid = false
+        isValid = false;
         if (repeatPassword) {
-          showValidationError(repeatPassword, 'Passwords do not match.')
+          showValidationError(repeatPassword, 'Passwords do not match.');
         }
       }
     }
-    return isValid
+    return isValid;
   }
 
-  const contactEmailInput = document.getElementById('email')
+  const contactEmailInput = document.getElementById('email');
 
   if (contactEmailInput) {
     contactEmailInput.addEventListener('blur', function () {
-      const emailValue = this.value
+      const emailValue = this.value;
 
       if (emailValue.trim() === '') {
-        clearValidationError(this)
-        return
+        clearValidationError(this);
+        return;
       }
 
       if (!emailRegex.test(emailValue)) {
-        showValidationError(this, 'Please enter a valid email address.')
+        showValidationError(this, 'Please enter a valid email address.');
       } else {
-        clearValidationError(this)
+        clearValidationError(this);
       }
-    })
+    });
   }
 
   document.body.addEventListener('submit', function (event) {
-    const form = event.target
+    const form = event.target;
 
     if (form.classList.contains('cart-form')) {
-      return
+      return;
     }
     if (form.closest('#auth-dialog')) {
-      return
+      return;
     }
 
-    event.preventDefault()
-    const isValid = validateForm(form)
+    event.preventDefault();
+    const isValid = validateForm(form);
 
     if (isValid) {
-      console.log('Form is valid:', form.id)
-      form.reset()
-      window.showFlashMessage('Form Submitted Successfully', 'success')
+      console.log('Form is valid:', form.id);
+      form.reset();
+      window.showFlashMessage('Form Submitted Successfully', 'success');
     } else {
-      console.log('Form is invalid:', form.id)
+      console.log('Form is invalid:', form.id);
     }
-  })
+  });
 
   document.body.addEventListener('input', function (event) {
-    const input = event.target.closest('input, textarea')
+    const input = event.target.closest('input, textarea');
     if (input && input.classList.contains('is-invalid')) {
       if (input.value.trim() !== '') {
-        clearValidationError(input)
+        clearValidationError(input);
       }
     }
-  })
+  });
 
-  const authDialog = document.getElementById('auth-dialog')
-  const signInView = document.getElementById('sign-in-view')
-  let dialogToggle = true
+  const authDialog = document.getElementById('auth-dialog');
+  const signInView = document.getElementById('sign-in-view');
+  let dialogToggle = true;
 
   // Sign-up HTML
   const signUpHTML = `
@@ -280,147 +278,140 @@ document.addEventListener('DOMContentLoaded', function () {
       <button class="form-toggle">Sign in</button>
     </p>
   </div>
-  `
+  `;
 
   if (userBtn) {
     userBtn.addEventListener('click', function () {
       if (!dialogToggle) {
-        authDialog.close()
+        authDialog.close();
       } else {
-        authDialog.show()
-        resetToSignInView()
+        authDialog.show();
+        resetToSignInView();
       }
-      dialogToggle = !dialogToggle
-    })
+      dialogToggle = !dialogToggle;
+    });
   }
 
-  function resetToSignInView () {
-    const signUpView = document.getElementById('sign-up-view')
-    signUpView?.remove()
+  function resetToSignInView() {
+    const signUpView = document.getElementById('sign-up-view');
+    signUpView?.remove();
 
     if (signInView) {
-      signInView.style.display = 'flex'
-      signInView.classList.remove('fade-in', 'fade-out')
-      signInView
-        .querySelectorAll('.is-invalid')
-        .forEach((el) => clearValidationError(el))
+      signInView.style.display = 'flex';
+      signInView.classList.remove('fade-in', 'fade-out');
+      signInView.querySelectorAll('.is-invalid').forEach((el) => clearValidationError(el));
     }
   }
 
   if (authDialog) {
     // Close dialog function
-    function handleDialogClose (event) {
-      if (
-        event.target === authDialog ||
-        event.target.closest('.dialog-close-btn')
-      ) {
-        authDialog.close()
-        dialogToggle = true
+    function handleDialogClose(event) {
+      if (event.target === authDialog || event.target.closest('.dialog-close-btn')) {
+        authDialog.close();
+        dialogToggle = true;
       }
     }
 
     // Password visibility toggle
-    function handlePasswordToggle (event) {
-      const btn = event.target.closest('.toggle-visibility')
-      if (!btn) return
+    function handlePasswordToggle(event) {
+      const btn = event.target.closest('.toggle-visibility');
+      if (!btn) return;
 
-      event.preventDefault()
-      const inputGroup = btn.closest('.input-group')
-      if (!inputGroup) return
+      event.preventDefault();
+      const inputGroup = btn.closest('.input-group');
+      if (!inputGroup) return;
 
-      const passwordInput = inputGroup.querySelector('input')
-      const icon = btn.querySelector('img')
+      const passwordInput = inputGroup.querySelector('input');
+      const icon = btn.querySelector('img');
 
-      if (!passwordInput || !icon) return
+      if (!passwordInput || !icon) return;
 
       if (passwordInput.type === 'password') {
-        passwordInput.type = 'text'
-        icon.src = '/src/assets/shown.png'
-        icon.alt = 'password-shown'
+        passwordInput.type = 'text';
+        icon.src = '/src/assets/shown.png';
+        icon.alt = 'password-shown';
       } else {
-        passwordInput.type = 'password'
-        icon.src = '/src/assets/hidden.png'
-        icon.alt = 'password-hidden'
+        passwordInput.type = 'password';
+        icon.src = '/src/assets/hidden.png';
+        icon.alt = 'password-hidden';
       }
     }
 
     // Toggle form type
-    function handleAuthViewToggle (event) {
-      const btn = event.target.closest('.form-toggle')
-      if (!btn) return
+    function handleAuthViewToggle(event) {
+      const btn = event.target.closest('.form-toggle');
+      if (!btn) return;
 
-      const currentView = btn.closest('.dialog-wrapper')
-      if (!currentView) return
+      const currentView = btn.closest('.dialog-wrapper');
+      if (!currentView) return;
 
-      let nextView
+      let nextView;
 
       if (currentView.id === 'sign-in-view') {
         if (!document.getElementById('sign-up-view')) {
-          authDialog.insertAdjacentHTML('beforeend', signUpHTML)
+          authDialog.insertAdjacentHTML('beforeend', signUpHTML);
         }
-        nextView = document.getElementById('sign-up-view')
+        nextView = document.getElementById('sign-up-view');
 
-        currentView.classList.add('fade-out')
+        currentView.classList.add('fade-out');
         currentView.addEventListener(
           'animationend',
           () => {
-            currentView.style.display = 'none'
-            currentView.classList.remove('fade-out')
+            currentView.style.display = 'none';
+            currentView.classList.remove('fade-out');
             if (nextView) {
-              nextView.style.display = 'flex'
-              nextView.classList.add('fade-in')
+              nextView.style.display = 'flex';
+              nextView.classList.add('fade-in');
             }
           },
           { once: true }
-        )
+        );
       } else if (currentView.id === 'sign-up-view') {
-        nextView = signInView
-        currentView.classList.add('fade-out')
+        nextView = signInView;
+        currentView.classList.add('fade-out');
         currentView.addEventListener(
           'animationend',
           () => {
-            currentView.remove()
+            currentView.remove();
             if (nextView) {
-              nextView.style.display = 'flex'
-              nextView.classList.add('fade-in')
+              nextView.style.display = 'flex';
+              nextView.classList.add('fade-in');
             }
           },
           { once: true }
-        )
+        );
       }
 
       if (nextView) {
-        nextView.addEventListener(
-          'animationend',
-          (e) => e.target.classList.remove('fade-in'),
-          { once: true }
-        )
+        nextView.addEventListener('animationend', (e) => e.target.classList.remove('fade-in'), {
+          once: true,
+        });
       }
     }
 
     authDialog.addEventListener('click', function (event) {
-      handleDialogClose(event)
-      handlePasswordToggle(event)
-      handleAuthViewToggle(event)
-    })
+      handleDialogClose(event);
+      handlePasswordToggle(event);
+      handleAuthViewToggle(event);
+    });
 
     authDialog.addEventListener('submit', function (event) {
-      event.preventDefault()
-      const form = event.target
-      const isValid = validateForm(form)
+      event.preventDefault();
+      const form = event.target;
+      const isValid = validateForm(form);
 
       if (isValid) {
-        console.log('Valid auth form submitted:', form.id)
-        form.reset()
-        authDialog.close()
-        dialogToggle = true
-        window.showFlashMessage('Form Submitted Successfully', 'success')
+        console.log('Valid auth form submitted:', form.id);
+        form.reset();
+        authDialog.close();
+        dialogToggle = true;
+        window.showFlashMessage('Form Submitted Successfully', 'success');
       } else {
-        console.log('Invalid auth form submitted:', form.id)
+        console.log('Invalid auth form submitted:', form.id);
       }
-    })
+    });
   }
 
   // Initialize the cart counter
-  window.updateCartCounter()
-})
+  window.updateCartCounter();
+});
