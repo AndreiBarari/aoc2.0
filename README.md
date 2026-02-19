@@ -1,6 +1,6 @@
-**"Best Shop" Project (Capstone Project)**
+**"AoC 2.0**
 
-This is a capstone project that implements an e-commerce website for luggage. The project is built with HTML, SCSS (Sass), and "vanilla" JavaScript.
+This is the next generation of the https://oportunitatisicariere.ro/ website WIP
 
 **Prerequisites**
 
