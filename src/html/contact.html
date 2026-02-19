@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="../dist/main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="utility">
+        <div class="utility__media">
+          <ul>
+            <li>
+              <a className="media-link" href="#"
+                ><img src="/src/assets/Header/facebook.png" alt="facebook-logo"
+              /></a>
+            </li>
+            <li>
+              <a className="media-link" href="#"
+                ><img src="/src/assets/Header/twitter.png" alt="twitter-logo"
+              /></a>
+            </li>
+            <li>
+              <a className="media-link" href="#"
+                ><img
+                  src="/src/assets/Header/instagram.png"
+                  alt="instagram-logo"
+              /></a>
+            </li>
+          </ul>
+        </div>
+
+        <a href="/src//index.html" class="utility__logo">
+          <span>
+            <img src="/src/assets/Header/logo.png" alt="" />
+          </span>
+          Asociata oportunitati si cariere</a
+        >
+
+        <div class="utility__acount-group">
+          <button>
+            <img
+              id="user"
+              src="/src/assets/Header/user.png"
+              alt="user-settings"
+            />
+          </button>
+          <a id="cart" href="/src/html/cart.html">
+            <img src="/src/assets/Header/cart.png" alt="cart" />
+          </a>
+        </div>
+      </div>
+
+      <nav class="navigation" aria-label="main-navigation">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+
+          <li class="dropdown">
+            <a class="dropdown__link" href="/src/html/catalog.html">Catalog</a>
+
+            <ul class="dropdown__content">
+              <li class="mobile-only">
+                <a href="/src/html/catalog.html">All Products</a>
+              </li>
+              <li>
+                <a href="/src/html/catalog.html?category=carry-ons"
+                  >Misiunea Noastra</a
+                >
+              </li>
+              <li>
+                <a href="/src/html/catalog.html?category=suitcases"
+                  >Cum poti ajuta?</a
+                >
+              </li>
+              <li>
+                <a href="/src/html/catalog.html?category=luggage sets"
+                  >De ce sa ajuti?</a
+                >
+              </li>
+              <li>
+                <a href="/src/html/catalog.html?category=kids' luggage"
+                  >Echipa</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="./about.html">Povesti de succes</a></li>
+          <li><a class="active" href="./contact.html">Intalniri</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main-contact">
+      <dialog id="auth-dialog">
+        <div class="dialog-wrapper" id="sign-in-view">
+          <button
+            class="dialog-close-btn"
+            type="button"
+            aria-label="Închide dialogul"
+          >
+            &times;
+          </button>
+          <h2>Sign in</h2>
+          <form action="" id="sign-in-form" novalidate>
+            <div class="input-group">
+              <label for="sign-in-email"
+                >Email Address <span class="highlight-rose">*</span></label
+              >
+              <input
+                type="email"
+                name="email"
+                id="sign-in-email"
+                required
+                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                title="Use a valid email address"
+                autocomplete="email"
+              />
+              <span class="form-error-message" aria-live="polite"></span>
+            </div>
+            <div class="input-group">
+              <label for="sign-in-password"
+                >Password <span class="highlight-rose">*</span></label
+              >
+              <input
+                type="password"
+                name="password"
+                id="sign-in-password"
+                required
+                autocomplete="current-password"
+              />
+              <button class="toggle-visibility" type="button">
+                <img src="/src/assets/hidden.png" alt="password-hidden" />
+              </button>
+              <span class="form-error-message" aria-live="polite"></span>
+            </div>
+            <div class="options-group">
+              <div>
+                <input type="checkbox" name="remember" id="remember" />
+                <label for="remember" class="highlight-neutral"
+                  >Remember me</label
+                >
+              </div>
+              <a href="#">Forgot password?</a>
+            </div>
+            <button type="submit">Log in</button>
+          </form>
+
+          <p>
+            Don't have an account? <button class="form-toggle">Sign up</button>
+          </p>
+        </div>
+      </dialog>
+
+      <section class="contact-hero">
+        <h1>Contact Us</h1>
+        <p>
+          Duis vestibulum elit vel neque pharetra vulputate. Duis rutrum non
+          risus in imperdiet.
+        </p>
+      </section>
+
+      <section class="contact-schedule">
+        <ul>
+          <li>
+            <img src="/src/assets/Contact/location.png" alt="Location" />
+            <h2>Our Location</h2>
+            <div>
+              <p>1234 NW Bobcat Lane, St.</p>
+              <p>Robert, MO 65584-5678</p>
+            </div>
+          </li>
+          <li>
+            <img src="/src/assets/Contact/time.png" alt="Time" />
+            <h2>Operating Time</h2>
+            <div>
+              <p>Monday - Friday: 9am - 6 pm</p>
+              <p>Weekends: 10:30 am - 6pm</p>
+            </div>
+          </li>
+          <li>
+            <img src="/src/assets/Contact/email.png" alt="Email" />
+            <h2>Our Email</h2>
+            <div>
+              <p>best@shop.com</p>
+              <p>info@bestshop.com</p>
+            </div>
+          </li>
+          <li>
+            <img src="/src/assets/Contact/phone.png" alt="Phone" />
+            <h2>Call Us</h2>
+            <div>
+              <p>(268)142-8413</p>
+              <p>(760)265-2917</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="contact-form">
+        <img
+          class="contact-form__img"
+          src="/src/assets/Contact/feedback.jpg"
+          alt="feedback"
+        />
+        <div class="contact-form__wrapper" action="">
+          <h2>Your Feedback Is Much Appreciated</h2>
+          <p>We will contact you when you complete the following form!</p>
+
+          <form class="feedback-form" action="" novalidate>
+            <div class="form-group">
+              <label for="name"
+                >Your Name <span class="highlight-rose">*</span></label
+              >
+              <input type="text" name="name" id="name" required />
+              <span class="form-error-message" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label for="email"
+                >Your Email Address <span class="highlight-rose">*</span></label
+              >
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                autocomplete="email"
+              />
+              <span class="form-error-message" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label for="topic"
+                >Topic <span class="highlight-rose">*</span></label
+              >
+              <input type="text" name="topic" id="topic" required />
+              <span class="form-error-message" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label for="message"
+                >Your Message <span class="highlight-rose">*</span></label
+              >
+              <textarea
+                name="message"
+                id="message"
+                cols="20"
+                rows="10"
+                required
+              ></textarea>
+              <span class="form-error-message" aria-live="polite"></span>
+            </div>
+            <button type="submit" class="submit-feedback">Send</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__benefits">
+        <h2>Our Benefits</h2>
+        <ul>
+          <li>
+            <img src="../assets/Footer/travel.png" alt="shield-logo" />
+            <p>
+              Velit nisl sodales eget <br />
+              donec quis. volutpat orci.
+            </p>
+          </li>
+          <li>
+            <img src="../assets/Footer/truck.png" alt="shield-logo" />
+            <p>Dolor eu varius. Morbi<br />fermentum velit nisl.</p>
+          </li>
+          <li>
+            <img src="../assets/Footer/coins.png" alt="shield-logo" />
+            <p>Malesuada fames ac ante<br />ipsum primis in faucibus.</p>
+          </li>
+          <li>
+            <img src="../assets/Footer/student-hat.png" alt="shield-logo" />
+            <p>
+              Nisl sodales eget donec<br />
+              quis. volutpat orci.
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__grid">
+        <nav class="footer-links" aria-label="Footer navigation links">
+          <ul class="link-list">
+            <li>
+              <h3>
+                <a href="/src/html/about.html"> About Us </a>
+              </h3>
+            </li>
+            <li><a href="#">Organisation</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">Clients</a></li>
+          </ul>
+
+          <ul class="link-list">
+            <li><h3>Interesting Links</h3></li>
+            <li><a href="#">Photo Gallery</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Socials</a></li>
+          </ul>
+
+          <ul class="link-list">
+            <li><h3>Achievements</h3></li>
+            <li><a href="#">Winning Awards</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Our Amazing Clients</a></li>
+          </ul>
+        </nav>
+
+        <section class="footer__shipping">
+          <h3>Shipping Information</h3>
+          <p>
+            Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac.
+            Ut sit amet erat nec nibh rhoncus varius in non lorem. Donec
+            interdum, lectus in convallis pulvinar, enim elit porta sapien, vel
+            finibus erat felis sed neque. Etiam aliquet neque sagittis erat
+            tincidunt aliquam.
+          </p>
+        </section>
+
+        <section class="footer__contact">
+          <h3>
+            <a href="/src/html/contact.html"> Contact Us </a>
+          </h3>
+          <p class="contact-intro">
+            Bendum dolor eu varius. Morbi fermentum velitsodales egetonec.
+            volutpat orci. Sed ipsum felis, tristique egestas et, convallis ac
+            velitn consequat nec luctus.
+          </p>
+
+          <ul class="contact-details">
+            <li>
+              <img src="../assets/Footer/phone.png" alt="" />
+              <a href="tel:+632366322">Phone: (+63) 236 6322</a>
+            </li>
+            <li>
+              <img src="../assets/Footer/email.png" alt="" />
+              <a href="mailto:public@news.com">public@news.com</a>
+            </li>
+            <li>
+              <img src="../assets/Footer/schedule.png" alt="" />
+              <p>
+                Mon - Fri: 10am - 6pm
+                <br />
+                Sat - Sun: 10am - 6pm
+              </p>
+            </li>
+            <li>
+              <img src="../assets/Footer/location.png" alt="" />
+              <p>
+                639 Jade Valley, <br />
+                Washington Dc
+              </p>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="footer__copyright">
+        <p>&copy; Copywright 2025</p>
+      </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+  </body>
+</html>

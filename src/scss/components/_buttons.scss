@@ -1,0 +1,31 @@
+%button-rose {
+  padding: 1.2rem 2.4rem;
+  color: $white;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  border: 2px solid $rose-500;
+  background-color: $rose-500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $rose-600;
+    border-color: $rose-600;
+  }
+}
+
+%button-rose-outline {
+  padding: 1.2rem 1.6rem;
+  color: $rose-500;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  border: 2px solid $rose-500;
+  background-color: $white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $rose-500;
+    color: $white;
+  }
+}

@@ -1,0 +1,219 @@
+.footer {
+  @include flex(column, center, center);
+
+  width: 100%;
+  padding-top: 4rem;
+
+  &__benefits {
+    @include flex(column, center, start);
+
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 4rem 2rem;
+    gap: 3.2rem;
+    background-image: url("../../assets/Footer/separator.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    h2 {
+      max-width: 1440px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: start;
+      font-size: $h2-font-size;
+      font-weight: $font-weight-bold;
+      color: $white;
+    }
+
+    ul {
+      @include flex(row, space-between, center);
+
+      max-width: 1440px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 2rem;
+      row-gap: 4rem;
+
+      li {
+        @include flex(row, space-between, center);
+
+        gap: 2rem;
+
+        img {
+          width: 6rem;
+          height: 6rem;
+        }
+
+        p,
+        a {
+          font-size: $font-size-xxl;
+          font-weight: $font-weight-medium;
+          color: $white;
+          width: 210px;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+
+  &__grid {
+    width: 100%;
+    width: clamp(300px, 100%, 1440px);
+    padding: 4rem 2rem;
+    display: grid;
+    gap: 4rem;
+    column-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "links links contact"
+      "shipping shipping contact";
+    font-size: $font-size-xl;
+    font-weight: $font-weight-medium;
+
+    h3 {
+      font-size: $h3-font-size;
+      font-weight: $font-weight-bold;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links {
+      grid-area: links;
+
+      @include flex(row, flex-start, flex-start);
+
+      flex-wrap: wrap;
+      gap: 2rem 14rem;
+
+      .link-list {
+        padding: 0;
+        margin-bottom: 2.5rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        li {
+          padding-bottom: 0.75rem;
+        }
+      }
+    }
+
+    .footer__shipping {
+      grid-area: shipping;
+    }
+
+    .footer__contact {
+      grid-area: contact;
+
+      .contact-intro {
+        margin-bottom: 2rem;
+      }
+
+      .contact-details {
+        @include flex(row, flex-start, flex-start);
+
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 0;
+
+        li {
+          @include flex(row, flex-start, center);
+
+          gap: 1rem;
+          margin-bottom: 1.5rem;
+          width: 48%;
+
+          a,
+          p {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    padding: 2rem 0;
+    font-size: $font-size-xl;
+    color: $neutral-400;
+    font-weight: $font-weight-medium;
+  }
+}
+
+@media screen and (max-width: ($breakpoint-xl - 1px)) {
+  .footer {
+    &__grid {
+      .footer-links {
+        column-gap: 10rem;
+      }
+
+      .footer__contact {
+        .contact-details {
+          flex-direction: column;
+
+          li {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: ($breakpoint-lg - 1px)) {
+  .footer {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "links contact"
+        "shipping shipping";
+
+      .footer-links {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: ($breakpoint-md - 1px)) {
+  .footer {
+    &__benefits {
+      h2 {
+        text-align: center;
+      }
+
+      ul {
+        flex-direction: column;
+      }
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "links"
+        "shipping"
+        "contact";
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) and (width <= 1260px) {
+  .footer {
+    &__benefits {
+      h2 {
+        max-width: 768px;
+      }
+
+      ul {
+        max-width: 768px;
+
+        li {
+          justify-content: start;
+          width: 45%;
+        }
+      }
+    }
+  }
+}

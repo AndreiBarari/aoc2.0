@@ -1,0 +1,39 @@
+@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  @include flex(column, space-between, center);
+
+  min-height: 100dvh;
+  margin: 0 auto;
+  font-family: Montserrat, sans-serif;
+  line-height: 1.5;
+  background-color: $white;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: $neutral-800;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: $rose-500;
+  }
+}
+
+ul {
+  list-style: none;
+}
