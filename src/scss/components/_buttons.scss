@@ -1,6 +1,6 @@
 @use '../base' as *;
 
-@mixin button-rose {
+@mixin primary-btn {
   padding: 1.2rem 2.4rem;
   color: $neutral-100;
   font-size: $font-size-xl;
@@ -16,7 +16,7 @@
   }
 }
 
-@mixin button-rose-outline {
+@mixin primary-btn-outline {
   padding: 1.2rem 1.6rem;
   color: $mint-600;
   font-size: $font-size-xl;

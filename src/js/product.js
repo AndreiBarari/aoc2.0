@@ -154,8 +154,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function generateRatingStars(rating) {
     let starsHtml = '';
     const roundedRating = Math.round(rating);
-    const emptyStarPath = '/src/assets/empty-rating.png';
-    const filledStarPath = '/src/assets/filled-rating.png';
+    const emptyStarPath = '/assets/empty-rating.png';
+    const filledStarPath = '/assets/filled-rating.png';
 
     for (let i = 1; i <= 5; i++) {
       if (i <= roundedRating) {
@@ -173,11 +173,11 @@ document.addEventListener('DOMContentLoaded', function () {
       .map(
         (item) => `
         <div data-id="${item.id}" class="product-card">
-          <a href="/src/html/product.html?id=${item.id}"><img src="${
+          <a href="/html/product.html?id=${item.id}"><img src="${
             item.imageUrl
           }" alt="${item.name}"></a>
           ${item.salesStatus ? '<span>SALE</span>' : ''}
-          <a href="/src/html/product.html?id=${item.id}"><h3>${item.name}</h3></a>
+          <a href="/html/product.html?id=${item.id}"><h3>${item.name}</h3></a>
           <p>$${item.price}</p>
           <button class="add-to-cart">Add to Cart</button>
         </div>
@@ -192,8 +192,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!ratingSpan) return;
 
-    const emptyStarPath = '/src/assets/empty-rating.png';
-    const filledStarPath = '/src/assets/filled-rating.png';
+    const emptyStarPath = '/assets/empty-rating.png';
+    const filledStarPath = '/assets/filled-rating.png';
     let currentRating = 0;
 
     ratingSpan.innerHTML = '';

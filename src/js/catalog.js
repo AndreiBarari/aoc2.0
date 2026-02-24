@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function generateRatingStars(rating) {
     let starsHtml = '';
     const roundedRating = Math.round(rating);
-    const emptyStarPath = '/src/assets/empty-rating.png';
-    const filledStarPath = '/src/assets/filled-rating.png';
+    const emptyStarPath = '/assets/empty-rating.png';
+    const filledStarPath = '/assets/filled-rating.png';
     for (let i = 1; i <= 5; i++) {
       if (i <= roundedRating) {
         starsHtml += `<img src="${filledStarPath}" alt="Filled Star">`;
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .map(
           (item) => `
         <div class="top-seller-card">
-          <a href="/src/html/product.html?id=${item.id}">
+          <a href="/html/product.html?id=${item.id}">
             <img src="${item.imageUrl}" alt="${item.name}">
           </a>
           <div class="top-seller-card__info">

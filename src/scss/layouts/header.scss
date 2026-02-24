@@ -97,7 +97,7 @@
       }
 
       .join-btn {
-        @include button-rose-outline;
+        @include primary-btn-outline;
         font-size: $font-size-xxl;
         border-radius: 0.75rem;
 

@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <label for="sign-up-password">Password <span class="highlight-rose">*</span></label>
         <input type="password" name="password" id="sign-up-password" required autocomplete="new-password">
         <button class="toggle-visibility" type="button">
-          <img src="/src/assets/hidden.png" alt="password-hidden" />
+          <img src="/assets/hidden.png" alt="password-hidden" />
         </button>
         <span class="form-error-message" aria-live="polite"></span>
       </div>
@@ -267,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <label for="repeat-password">Repeat Password <span class="highlight-rose">*</span></label>
         <input type="password" name="repeat-password" id="repeat-password" required autocomplete="new-password">
         <button class="toggle-visibility" type="button">
-          <img src="/src/assets/hidden.png" alt="password-hidden" />
+          <img src="/assets/hidden.png" alt="password-hidden" />
         </button>
         <span class="form-error-message" aria-live="polite"></span>
       </div>
@@ -328,11 +328,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
-        icon.src = '/src/assets/shown.png';
+        icon.src = '/assets/shown.png';
         icon.alt = 'password-shown';
       } else {
         passwordInput.type = 'password';
-        icon.src = '/src/assets/hidden.png';
+        icon.src = '/assets/hidden.png';
         icon.alt = 'password-hidden';
       }
     }

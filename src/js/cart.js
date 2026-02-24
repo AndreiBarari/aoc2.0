@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <td class="product-total">$${total.toFixed(2)}</td>
           <td>
             <button class="remove-product">
-              <img src="/src/assets/Cart/remove.png" alt="remove-product">
+              <img src="/assets/Cart/remove.png" alt="remove-product">
             </button>
           </td>
         </tr>

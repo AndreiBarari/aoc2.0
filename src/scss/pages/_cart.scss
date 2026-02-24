@@ -17,7 +17,7 @@
   }
 
   .cart-empty-btn {
-    @include button-rose;
+    @include primary-btn;
   }
 
   section {
@@ -27,7 +27,7 @@
   &__hero {
     @include flex(row, center, center);
 
-    background-image: url('/src/assets/Cart/cart-hero.png');
+    background-image: url('/assets/Cart/cart-hero.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -121,7 +121,7 @@
       padding: 2rem;
 
       button {
-        @include button-rose;
+        @include primary-btn;
 
         min-width: 240px;
       }

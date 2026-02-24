@@ -10,70 +10,103 @@
     <header class="header">
       <div class="utility">
         <div class="utility__media">
-          <ul>
+          <ul class="media-list">
             <li>
-              <a className="media-link" href="#"
-                ><img src="/src/assets/Header/facebook.png" alt="facebook-logo"
-              /></a>
+              <a
+                class="media-link"
+                href="https://www.linkedin.com/company/asociatia-oportunitati-si-cariere/"
+                target="_blank"
+              >
+                <img src="/assets/MediaIcons/bxl-linkedin-square.svg" alt="linkedin-logo" />
+              </a>
             </li>
             <li>
-              <a className="media-link" href="#"
-                ><img src="/src/assets/Header/twitter.png" alt="twitter-logo"
-              /></a>
+              <a class="media-link" href="https://www.instagram.com/peviitor.ro/" target="_blank">
+                <img src="/assets/MediaIcons/bxl-instagram-alt.svg" alt="instagram-logo" />
+              </a>
             </li>
             <li>
-              <a className="media-link" href="#"
-                ><img src="/src/assets/Header/instagram.png" alt="instagram-logo"
-              /></a>
+              <a class="media-link" href="https://discord.gg/KPMkdUfQNu" target="_blank">
+                <img src="/assets/MediaIcons/bxl-discord-alt.svg" alt="instagram-logo" />
+              </a>
+            </li>
+            <li>
+              <a
+                class="media-link"
+                href="https://github.com/peviitor-ro/oportunitatisicariere/issues"
+                target="_blank"
+              >
+                <img src="/assets/MediaIcons/bxl-github.svg" alt="instagram-logo" />
+              </a>
+            </li>
+            <li>
+              <a class="media-link" href="https://meet.jit.si/PEVIITOR.RO" target="_blank">
+                <img src="/assets/MediaIcons/bxl-jitsi.svg" alt="instagram-logo" />
+              </a>
+            </li>
+            <li>
+              <a
+                class="media-link"
+                href="https://dev.to/sebiboga/asociatia-oportunitati-si-cariere-viziune-2lal"
+                target="_blank"
+              >
+                <img src="/assets/MediaIcons/bxl-dev-to.svg" alt="instagram-logo" />
+              </a>
             </li>
           </ul>
         </div>
 
-        <a href="/src//index.html" class="utility__logo">
-          <span>
-            <img src="/src/assets/Header/logo.png" alt="" />
-          </span>
-          Best Shop</a
-        >
+        <a href="//index.html" class="utility__logo">
+          <img src="/assets/Header/logo.png" alt="asociatia-oportunitati-si-cariere-logo" />
+          <div class="company-title">
+            <span class="highlight-mint">ASOCIAȚIA</span>
+            <span class="highlight-blue">OPORTUNITĂȚI </span>
+            <span class="highlight-mint">ȘI CARIERE</span>
+          </div>
+        </a>
 
         <div class="utility__acount-group">
           <button>
-            <img id="user" src="/src/assets/Header/user.png" alt="user-settings" />
+            <img id="user" src="/assets/Header/user.png" alt="user-settings" />
           </button>
-          <a id="cart" href="/src/html/cart.html">
-            <img src="/src/assets/Header/cart.png" alt="cart" />
+          <a id="cart" href="/html/cart.html">
+            <img src="/assets/Header/cart.png" alt="cart" />
           </a>
+
+          <button class="join-btn">Alătură-te</button>
         </div>
       </div>
 
       <nav class="navigation" aria-label="main-navigation">
-        <ul>
-          <li><a href="../index.html">Home</a></li>
+        <ul class="nav-list">
+          <li>
+            <a href="../index.html">Început</a>
+          </li>
 
           <li class="dropdown">
-            <a class="dropdown__link" href="/src/html/catalog.html">Catalog</a>
+            <a class="dropdown__link" href="/html/catalog.html">Despre noi</a>
 
             <ul class="dropdown__content">
               <li class="mobile-only">
-                <a href="/src/html/catalog.html">All Products</a>
+                <a href="/html/catalog.html">All Products</a>
               </li>
               <li>
-                <a href="/src/html/catalog.html?category=carry-ons">Carry-ons</a>
+                <a href="/html/catalog.html?category=carry-ons">Misiunea noastră</a>
               </li>
               <li>
-                <a href="/src/html/catalog.html?category=suitcases">Suitcases</a>
+                <a href="/html/catalog.html?category=suitcases">Cum poți ajuta?</a>
               </li>
               <li>
-                <a href="/src/html/catalog.html?category=luggage sets">Luggage Sets</a>
+                <a href="/html/catalog.html?category=luggage sets">De ce să ajuți?</a>
               </li>
               <li>
-                <a href="/src/html/catalog.html?category=kids' luggage">Kids' Luggage</a>
+                <a href="/html/catalog.html?category=kids' luggage">Echipă</a>
               </li>
             </ul>
           </li>
 
-          <li><a href="./about.html">About Us</a></li>
-          <li><a href="./contact.html">Contact Us</a></li>
+          <li><a href="./about.html">Povești de succes</a></li>
+          <li><a class="active" href="./contact.html">Întâlniri</a></li>
         </ul>
       </nav>
     </header>
@@ -109,7 +142,7 @@
                 autocomplete="current-password"
               />
               <button class="toggle-visibility" type="button">
-                <img src="/src/assets/hidden.png" alt="password-hidden" />
+                <img src="/assets/hidden.png" alt="password-hidden" />
               </button>
               <span class="form-error-message" aria-live="polite"></span>
             </div>
@@ -134,16 +167,16 @@
           </figure>
           <ul class="product-gallery__thumbnails">
             <li>
-              <img src="/src/assets/Product/case-one.png" alt="Product thumbnail 1" />
+              <img src="/assets/Product/case-one.png" alt="Product thumbnail 1" />
             </li>
             <li>
-              <img src="/src/assets/Product/case-two.png" alt="Product thumbnail 2" />
+              <img src="/assets/Product/case-two.png" alt="Product thumbnail 2" />
             </li>
             <li>
-              <img src="/src/assets/Product/case-three.png" alt="Product thumbnail 3" />
+              <img src="/assets/Product/case-three.png" alt="Product thumbnail 3" />
             </li>
             <li>
-              <img src="/src/assets/Product/case-four.png" alt="Product thumbnail 4" />
+              <img src="/assets/Product/case-four.png" alt="Product thumbnail 4" />
             </li>
           </ul>
         </div>
@@ -211,15 +244,15 @@
           <div class="payment-options">
             <h2>Payments:</h2>
             <ul>
-              <li><img src="/src/assets/Product/visa.png" alt="Visa" /></li>
+              <li><img src="/assets/Product/visa.png" alt="Visa" /></li>
               <li>
-                <img src="/src/assets/Product/mastercard.png" alt="Mastercard" />
+                <img src="/assets/Product/mastercard.png" alt="Mastercard" />
               </li>
               <li>
-                <img src="/src/assets/Product/american-express.png" alt="American Express" />
+                <img src="/assets/Product/american-express.png" alt="American Express" />
               </li>
               <li>
-                <img src="/src/assets/Product/paypal.png" alt="PayPal" />
+                <img src="/assets/Product/paypal.png" alt="PayPal" />
               </li>
             </ul>
           </div>
@@ -271,7 +304,7 @@
             <h2 class="title-review">1 review for Global Explorer Max Comfort Suitcase Pro</h2>
             <article class="review">
               <img
-                src="/src/assets/Product/review.png"
+                src="/assets/Product/review.png"
                 alt="Avatar for Ella Harper"
                 class="review__avatar"
               />
@@ -383,7 +416,7 @@
           <ul class="link-list">
             <li>
               <h3>
-                <a href="/src/html/about.html"> About Us </a>
+                <a href="/html/about.html"> About Us </a>
               </h3>
             </li>
             <li><a href="#">Organisation</a></li>
@@ -418,7 +451,7 @@
 
         <section class="footer__contact">
           <h3>
-            <a href="/src/html/contact.html"> Contact Us </a>
+            <a href="/html/contact.html"> Contact Us </a>
           </h3>
           <p class="contact-intro">
             Bendum dolor eu varius. Morbi fermentum velitsodales egetonec. volutpat orci. Sed ipsum

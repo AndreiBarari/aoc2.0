@@ -144,7 +144,7 @@
         }
 
         button {
-          @include button-rose;
+          @include primary-btn;
 
           height: 6rem;
           width: 22rem;
@@ -261,7 +261,7 @@
         }
 
         button {
-          @include button-rose-outline;
+          @include primary-btn-outline;
 
           border-radius: 10px;
         }

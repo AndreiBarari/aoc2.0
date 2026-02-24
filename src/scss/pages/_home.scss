@@ -45,7 +45,7 @@
       gap: 3rem;
 
       a {
-        @include button-rose;
+        @include primary-btn;
       }
     }
 
@@ -120,7 +120,7 @@
         background-position: center;
 
         a {
-          @include button-rose;
+          @include primary-btn;
         }
       }
     }
