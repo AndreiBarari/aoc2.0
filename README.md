@@ -2,6 +2,9 @@
 
 This is the next generation of the https://oportunitatisicariere.ro/ website WIP
 
+Design:
+https://www.figma.com/design/G7RWf3wdZGZDpsKHrP3lu0/AoC-v2?node-id=0-1&p=f&t=mujqlv7nKZZacbww-0
+
 **Prerequisites**
 
 Before you begin, ensure you have Node.js (version 16 or newer) installed on your system. Installing Node.js will also automatically install NPM (Node Package Manager).
