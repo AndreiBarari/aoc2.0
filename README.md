@@ -1,9 +1,9 @@
 **"AoC 2.0**
 
-This is the next generation of the https://oportunitatisicariere.ro/ website WIP
+This is the next generation of the [OPORTUNITĂȚI ȘI CARIERE](https://oportunitatisicariere.ro/) website WIP
 
-Design:
-https://www.figma.com/design/G7RWf3wdZGZDpsKHrP3lu0/AoC-v2?node-id=0-1&p=f&t=mujqlv7nKZZacbww-0
+Figma [Design](https://www.figma.com/design/G7RWf3wdZGZDpsKHrP3lu0/AoC-v2?node-id=0-1&p=f&t=mujqlv7nKZZacbww-0)
+
 
 **Prerequisites**
 
