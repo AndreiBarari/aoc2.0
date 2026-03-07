@@ -58,7 +58,7 @@ This project uses the following development dependencies (devDependencies):
 | --- | --- | --- |
 | **Product Owner** | Sebastian Boga | [@sebiboga](https://github.com/sebiboga) |
 | **Project Lead** | Adelina Moroaca | [@AdelinaMoroaca](https://github.com/AdelinaMoroaca) |
-| **Project Lead** | Andrei Barari | [@AndreiBarari](https://github.com/AndreiBarari) |
+| **Developer** | Andrei Barari | [@AndreiBarari](https://github.com/AndreiBarari) |
 
 ---
 
